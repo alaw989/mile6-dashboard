@@ -51,4 +51,23 @@ class JiraService
             ], $statusCode);
         }
     }
+
+    public function getAllProjects()
+    {
+        $url = $this->baseUrl . '/rest/api/3/project';
+
+        try {
+            $response = $this->client->request('GET', $url, [
+                'headers' => [
+                    'Authorization' => 'Basic ' . base64_encode($this->email . ':' . $this->apiToken),
+                    'Accept' => 'application/json',
+                ],
+            ]);
+
+            return json_decode($response->getBody()->getContents(), true);
+        } catch (RequestException $e) {
+            Log::error('Error fetching projects: ' . $e->getMessage());
+            return null;
+        }
+    }
 }
