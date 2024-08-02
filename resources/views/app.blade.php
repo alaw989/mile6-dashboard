@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mile 6 Dashboard</title>
-    @vite('resources/js/app.js')
+    @vite('resources/css/app.css')
     @inertiaHead
 </head>
     <body>
     @inertia
+    @vite('resources/js/app.js')
     </body>
 </html>

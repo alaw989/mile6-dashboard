@@ -34,5 +34,8 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'jira' => [
+        'board_numbers' => explode(',', env('JIRA_BOARD_NUMBERS')),
+    ],
 
 ];
